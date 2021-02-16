@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">gymapp</string>
+    <string name="preference_file">prefrencefile</string>
 </resources>
