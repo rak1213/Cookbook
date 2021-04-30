@@ -32,7 +32,7 @@ class ForgetPassActivity : AppCompatActivity() {
         next.setOnClickListener {
             val queue = Volley.newRequestQueue(this)
 
-            val url = " "
+            val url = "https://young-stream-54945.herokuapp.com/forgot"
             val jsonParams = JSONObject()
             val mobile = etmobile.text.toString()
             val email = etemail.text.toString()

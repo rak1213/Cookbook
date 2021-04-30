@@ -10,7 +10,7 @@
         android:id="@+id/applogo"
         android:layout_width="200dp"
         android:layout_height="200dp"
-        android:src="@drawable/logo"
+        android:src="@drawable/cookbooklogo"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
         />
@@ -23,7 +23,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginTop="40dp"
         android:layout_marginRight="20dp"
-android:drawableLeft="@drawable/ic_phone"
+        android:drawableLeft="@drawable/ic_phone"
 
         android:hint=" MOBILE NUMBER(10)"
         android:inputType="phone"
@@ -41,7 +41,7 @@ android:drawableLeft="@drawable/ic_phone"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
         android:layout_marginRight="20dp"
-android:drawableLeft="@drawable/ic_lock"
+        android:drawableLeft="@drawable/ic_lock"
 
         android:hint=" PASSWORD"
         android:inputType="textPassword"
@@ -73,6 +73,18 @@ android:drawableLeft="@drawable/ic_lock"
         android:text="Forgot Password?"
         android:textColor="#000"
         android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/skip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/fp"
+        android:layout_centerInParent="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="150dp"
+        android:text="SKIP>>>"
+        android:textColor="@color/black"
+        android:textSize="18sp" />
 
     <Button
         android:id="@+id/noacc"

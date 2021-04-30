@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardcui"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="3dp"
+
+    app:cardCornerRadius="2dp"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:orientation="horizontal"
+        android:background="@drawable/recipieback">
+
+
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="2dp"
+            android:layout_marginTop="12dp">
+
+            <RelativeLayout
+                android:id="@+id/rlOne"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+
+                <TextView
+                    android:id="@+id/txtCuiName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:padding="4dp"
+                    android:textStyle="bold"
+                    android:text="cuisine_name"
+                    android:layout_marginTop="100dp"
+                    android:textSize="30sp"
+                    android:textColor="@android:color/black" />
+
+                <ImageView
+                    android:id="@+id/imgIsFav"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginLeft="300dp"
+                    android:layout_marginTop="108dp"
+                    android:padding="6dp"
+                    android:src="@drawable/ic_baseline_favorite_border_24" />
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

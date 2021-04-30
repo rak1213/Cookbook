@@ -9,13 +9,14 @@
         android:allowBackup="true"
         android:icon="@drawable/logo"
         android:label="@string/app_name"
-        android:roundIcon="@drawable/logo"
+        android:roundIcon="@drawable/cookbooklogo"
         android:supportsRtl="true"
         android:theme="@style/Theme.Gymapp">
-        <activity android:name=".Activity.ForgetPassActivity"></activity>
+        <activity android:name=".Activity.RecipieDetailsActivity"></activity>
+        <activity android:name=".Activity.CuisineDetailsActivity" />
+        <activity android:name=".Activity.ForgetPassActivity" />
         <activity android:name=".Activity.OtpVerificationActivity" />
         <activity android:name=".Activity.DashboardActivity" />
-        <activity android:name=".Activity.ForgetpassActivity" />
         <activity android:name=".Activity.RegisterActivity" />
         <activity
             android:name=".Activity.SplashActivity"

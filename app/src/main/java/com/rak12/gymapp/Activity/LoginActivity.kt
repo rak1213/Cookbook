@@ -27,6 +27,7 @@ class LoginActivity : AppCompatActivity() {
     lateinit var fp: TextView
     lateinit var noacc: TextView
     lateinit var login: Button
+    lateinit var skip:TextView
     lateinit var sp: SharedPreferences
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,6 +37,7 @@ class LoginActivity : AppCompatActivity() {
         etpass = findViewById(R.id.pass)
         login = findViewById(R.id.login)
         fp = findViewById(R.id.fp)
+        skip=findViewById(R.id.skip)
 
         noacc = findViewById(R.id.noacc)
         sp = getSharedPreferences(getString(R.string.preference_file), Context.MODE_PRIVATE)
@@ -51,7 +53,7 @@ class LoginActivity : AppCompatActivity() {
         login.setOnClickListener {
 
             val queue = Volley.newRequestQueue(this)
-            val url = " "
+            val url = "https://young-stream-54945.herokuapp.com/login"
             val jsonParams = JSONObject()
             val mobile = etmobile.text.toString()
             val pass = etpass.text.toString()
@@ -146,6 +148,11 @@ class LoginActivity : AppCompatActivity() {
 
             }
 
+        }
+        skip.setOnClickListener{
+            val i = Intent(this, DashboardActivity::class.java)
+            startActivity(i)
+            finish()
         }
 
 

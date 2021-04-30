@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.RecipieDetailsActivity">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+   >
+
+        <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/red"
+        android:minHeight="?attr/actionBarSize"
+        app:layout_scrollFlags="scroll|enterAlways"
+        app:subtitleTextColor="#fff"
+        app:titleTextColor="#fff" />
+    </com.google.android.material.appbar.AppBarLayout>
+    <ImageView
+        android:id="@+id/reciimg"
+        android:layout_below="@+id/appbar1"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:src="@drawable/food"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/reciname"
+        android:layout_below="@+id/reciimg"
+        android:text="reciname"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="4dp"
+        android:textAllCaps="true"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/time"
+        android:layout_below="@+id/reciname"
+        android:text=" Time REQUIRED"
+        android:drawableLeft="@drawable/ic_baseline_access_time_24"
+        android:layout_marginLeft="5dp"
+        android:textSize="16sp"
+
+        android:textColor="@color/black"
+
+        android:layout_marginTop="2dp"
+       />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/rname"
+        android:layout_below="@+id/time"
+        android:text="STEPS TO FOLLOW :"
+
+        android:layout_marginLeft="5dp"
+        android:textSize="18sp"
+        android:textStyle="bold"
+
+        android:textColor="@color/black"
+
+        android:layout_marginTop="2dp"
+        />
+    <ScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/rname"
+        android:layout_marginTop="5dp"
+>   <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/ta"
+        android:layout_below="@+id/time"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:textSize="18sp"
+        android:padding="5dp"
+
+        android:textColor="@color/black"
+
+        android:layout_marginTop="2dp"
+        />
+   </ScrollView>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/Comments"
+        android:layout_below="@+id/scroll"
+        android:text="COMMENTS "
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:padding="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"
+        android:textSize="20sp"/>
+
+    <EditText
+        android:id="@+id/feedbackText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        android:layout_below="@id/Comments"
+        android:background="@drawable/text_background"
+        android:drawablePadding="10dp"
+        android:hint="LOG IN to Enter a Comment!"
+        android:inputType="text"
+        android:padding="15dp"
+        android:minLines="5"
+        android:scrollbarAlwaysDrawVerticalTrack="true"
+        android:scrollbars="vertical"
+        android:textColor="@color/black"/>
+
+    <Button
+        android:id="@+id/submitFeedback"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/feedbackText"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        android:background="#DF0101"
+        android:text="SUBMIT"
+        android:textAllCaps="false"
+        android:textColor="#fff"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/previousFeedback"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PREVIOUS COMMENTS"
+        android:textSize="20sp"
+        android:layout_below="@id/submitFeedback"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/feedbackRecycler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/previousFeedback"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="50dp"
+        android:padding="10dp" />
+
+    <RelativeLayout
+    android:id="@+id/pl"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff">
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true" />
+</RelativeLayout>
+
+
+
+</RelativeLayout>
+</ScrollView>

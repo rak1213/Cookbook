@@ -26,6 +26,8 @@ class RegisterActivity : AppCompatActivity() {
     lateinit var etmobile: EditText
     lateinit var etemail: EditText
     lateinit var register: Button
+    lateinit var etpassword: EditText
+    lateinit var etconpass: EditText
     lateinit var sp: SharedPreferences
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,26 +38,29 @@ class RegisterActivity : AppCompatActivity() {
         etmobile = findViewById(R.id.mobile)
         etemail = findViewById(R.id.email)
         register = findViewById(R.id.register)
-
+        etpassword = findViewById(R.id.pass)
+        etconpass = findViewById(R.id.conpass)
         register.setOnClickListener {
 
             val queue = Volley.newRequestQueue(this)
 
-            val url = " "
+            val url = "https://young-stream-54945.herokuapp.com/signup"
             val jsonParams = JSONObject()
             val name = etname.text.toString()
             val mobile = etmobile.text.toString()
-
+             var location="home"
+            val pass = etpassword.text.toString()
             val email = etemail.text.toString()
             jsonParams.put("mobile_number", mobile)
             jsonParams.put("name", name)
-
+            jsonParams.put("address", location)
             jsonParams.put("email", email)
 
             if (Validations.validateNameLength(name)) {
                 if (Validations.validateEmail(email)) {
-                    if (Validations.validateMobile(mobile)) {
-
+                    if (Validations.validateMobile(mobile))
+                    {  if (Validations.validatePasswordLength(pass)) {
+                        if (Validations.matchPassword(pass, etconpass.text.toString())) {
                                 if (ConnectionManager().checkconnectivity(this)) {
 
                                     val jsonRequest =
@@ -98,7 +103,7 @@ class RegisterActivity : AppCompatActivity() {
                                                                 ).show()
                                                                 val i = Intent(
                                                                         this,
-                                                                        OtpVerificationActivity::class.java
+                                                                        DashboardActivity::class.java
                                                                 )
                                                                 startActivity(i)
                                                                 finish()
@@ -147,7 +152,15 @@ class RegisterActivity : AppCompatActivity() {
 
                                 }
 
-                    } else {
+                    }else{
+                            etpassword.error = "password dont match"
+                            etconpass.error = "password dont match"
+
+                    } }
+                    else{
+                        etpassword.error = "password should be more than of length 4 "
+                    }}
+                    else {
                         etmobile.error = "Invalid mobile number"
 
                     }
